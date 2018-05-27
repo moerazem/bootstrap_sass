@@ -27,4 +27,7 @@
         background: none;
         border-bottom: $border-width solid $border-color;
     }
+    nav ul.nav {
+        margin: 0 -($spacer);
+    }
 }

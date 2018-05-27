@@ -4,21 +4,27 @@
  */
 
 .vertical-tabs {
-    margin: 1em 0 1em 15em;
+    margin: 0;
     /* LTR */
     border: $border-width solid $border-color;
+    display: flex;
+    flex-direction: row;
+    font-size: $font-size-sm;
 }
 
 [dir="rtl"] .vertical-tabs {
+    flex-direction: row-reverse;
     margin-left: 0;
-    margin-right: 15em;
+    margin-right: 0;
 }
 
 .vertical-tabs__menu {
-    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     /* LTR */
     width: 15em;
-//    margin: -$border-width 0 -$border-width -$spacer-x;
+    margin: 0;
     /* LTR */
     padding: 0;
     border-top: $border-width solid $border-color;
@@ -26,7 +32,6 @@
 }
 
 [dir="rtl"] .vertical-tabs__menu {
-    float: right;
     margin-left: 0;
     margin-right: -15em;
 }
