@@ -14,3 +14,14 @@
     height: ($input-height / 2);
     margin: 0 0.3em;
 }
+
+form .filter-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+form .form-type-textarea {
+    margin-bottom: 0;
+}
