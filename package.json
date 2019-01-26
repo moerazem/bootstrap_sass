@@ -1,30 +1,38 @@
 {
-    "name": "barrio_sass",
-    "version": "8.4.1",
-    "description": "Barrio SASS implementation",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "SASS",
-        "Bootstrap",
-        "Drupal",
-        "Barrio"
-    ],
-    "author": "@hatuhay",
-    "license": "MIT",
-    "dependencies": {
-        "bootstrap": "~4.0.0"
-    },
-    "devDependencies": {
-        "gulp": "~3.9.1",
-        "gulp-autoprefixer": "~4.0.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-sass": "~3.1.0",
-        "gulp-minify-css": "~1.2.4",
-        "gulp-sourcemaps": "^2.6.0",
-        "gulp-uglify": "~3.0.0",
-        "browser-sync": "~2.18.13"
-    }
+  "name": "barrio_sass",
+  "version": "8.4.1",
+  "description": "Barrio SASS implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SASS",
+    "Bootstrap",
+    "Drupal",
+    "Barrio"
+  ],
+  "author": "@hatuhay",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "3.3.1",
+    "popper.js": "1.14.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-scss-lint": "^1.0.0",
+    "gulp-clean-css": "3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-postcss": "^8.0.0",
+    "gulp-uglify": "^3.0.0",
+    "merge-stream": "^1.0.1"
+  }
 }
