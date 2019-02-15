@@ -1,16 +1,30 @@
-
-var gulp = require('gulp'),
+let gulp = require('gulp'),
   sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps'),
   cleanCss = require('gulp-clean-css'),
   rename = require('gulp-rename'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
-  browserSync = require('browser-sync').create();
+  browserSync = require('browser-sync').create()
+
+const paths = {
+  scss: {
+    src: './scss/style.scss',
+    dest: './css',
+    watch: './scss/**/*.scss',
+    bootstrap: './node_modules/bootstrap/scss/bootstrap.scss'
+  },
+  js: {
+    bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    jquery: './node_modules/jquery/dist/jquery.min.js',
+    popper: 'node_modules/popper.js/dist/umd/popper.min.js',
+    dest: './js'
+  }
+}
 
 // Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function () {
-  return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/style.scss'])
+function styles () {
+  return gulp.src([paths.scss.bootstrap, paths.scss.src])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer({
@@ -26,29 +40,33 @@ gulp.task('sass', function () {
         'Opera >= 12']
     })]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest(paths.scss.dest))
     .pipe(cleanCss())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('css'))
-    .pipe(browserSync.stream());
-});
+    .pipe(gulp.dest(paths.scss.dest))
+    .pipe(browserSync.stream())
+}
 
 // Move the javascript files into our js folder
-gulp.task('js', function () {
-  return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
-    .pipe(gulp.dest("js"))
-    .pipe(browserSync.stream());
-});
+function js () {
+  return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper])
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(browserSync.stream())
+}
 
 // Static Server + watching scss/html files
-gulp.task('serve', gulp.series(['sass']), function () {
-
+function serve () {
   browserSync.init({
-    proxy: "http://yourdomain.com",
-  });
+    proxy: 'http://yourdomain.com',
+  })
 
-  gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'scss/*.scss'], ['sass']).on('change', browserSync.reload);
+  gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
+}
 
-});
+const build = gulp.series(styles, gulp.parallel(js, serve))
 
-gulp.task('default', gulp.parallel(['js', 'serve']));
+exports.styles = styles
+exports.js = js
+exports.serve = serve
+
+exports.default = build
