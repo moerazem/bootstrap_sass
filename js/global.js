@@ -28,8 +28,6 @@
         position = scroll;
       });
 
-      $('.toast').toast('show');
-
     }
   };
 
