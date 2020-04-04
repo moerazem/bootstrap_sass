@@ -37,16 +37,16 @@ Consolas,
 monospace;
 $font-family-base: $font-family-sans-serif;
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
-$font-size-lg: 1.25rem;
-$font-size-sm: .875rem;
-$font-size-xs: .75rem;
+$font-size-lg: $font-size-base * 1.25;
+$font-size-sm: $font-size-base * .875;
+$font-size-xs: $font-size-base * .75;
 $font-weight-normal: normal;
 $font-weight-bold: bold;
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
-$font-size-h1: 2.5rem;
-$font-size-h2: 2rem;
-$font-size-h3: 1.75rem;
-$font-size-h4: 1.5rem;
-$font-size-h5: 1.25rem;
-$font-size-h6: 1rem;
+$h1-font-size-h1: $font-size-base * 2.5;
+$h2-font-size-h2: $font-size-base * 2;
+$h3-font-size-h3: $font-size-base * 1.75;
+$h4-font-size-h4: $font-size-base * 1.5;
+$h5-font-size-h5: $font-size-base * 1.25;
+$h6-font-size-h6: $font-size-base;
