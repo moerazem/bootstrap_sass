@@ -22,8 +22,11 @@ cp -r ../contrib/bootstrap_sass $CUSTOM_BOOTSTRAP_SASS
 cd $CUSTOM_BOOTSTRAP_SASS
 for file in *bootstrap_sass.*; do mv $file ${file//bootstrap_sass/$CUSTOM_BOOTSTRAP_SASS}; done
 for file in config/*/*bootstrap_sass.*; do mv $file ${file//bootstrap_sass/$CUSTOM_BOOTSTRAP_SASS}; done
-mv {_,}$CUSTOM_BOOTSTRAP_SASS.theme
-mv {_,}$CUSTOM_BOOTSTRAP_SASS.layouts.yml
-grep -Rl bootstrap_sass .|xargs sed -i '' -e "s/bootstrap_sass/$CUSTOM_BOOTSTRAP_SASS/"
-sed -i '' -e "s/SASS Bootstrap Starter Kit Subtheme/$CUSTOM_BOOTSTRAP_SASS_NAME/" $CUSTOM_BOOTSTRAP_SASS.info.yml
+
+# Remove create_subtheme.sh file, we do not need it in customized subtheme.
+rm scripts/create_subtheme.sh
+
+# mv {_,}$CUSTOM_BOOTSTRAP_SASS.theme
+grep -Rl bootstrap_sass .|xargs sed -i -e "s/bootstrap_sass/$CUSTOM_BOOTSTRAP_SASS/"
+sed -i -e "s/SASS Bootstrap Starter Kit Subtheme/$CUSTOM_BOOTSTRAP_SASS_NAME/" $CUSTOM_BOOTSTRAP_SASS.info.yml
 echo "# Check the themes/custom folder for your new sub-theme."
