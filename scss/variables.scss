@@ -1,7 +1,7 @@
 /* VARIABLES */
 
 // colors
-$primary-shade: #A8CF45;
+$primary-shade: rgb(255, 78, 46);
 $primary-light: lighten($primary-shade, 37%);
 $primary-dark: darken($primary-shade, 12%);
 $accent-shade: #0079C0;
@@ -12,8 +12,9 @@ $red: #dc3545;
 $yellow: #ffc107;
 $green: #28a745;
 $cyan: #17a2b8;
-$gray-100: #f8f9fa !default;
-$gray-800: #343a40 !default;
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-800: #343a40;
 $theme-colors: ( primary: $accent-shade, secondary: $primary-shade, success: $green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
 $brand-primary: $accent-shade;
 //$brand-success: $green;
@@ -25,9 +26,9 @@ $brand-inverse: $primary-shade;
 //
 // Settings for the `<body>` element.
 $body-bg: $white;
-$body-color: $gray-900;
+$body-color: $gray-800;
 $inverse-bg: $primary-shade;
-$inverse-color: $gray-lighter;
+$inverse-color: $white;
 // Links
 //
 // Style anchor elements.
