@@ -18,6 +18,7 @@ const paths = {
     bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
     jquery: './node_modules/jquery/dist/jquery.min.js',
     popper: 'node_modules/popper.js/dist/umd/popper.min.js',
+    popper: 'node_modules/popper.js/dist/umd/popper.min.js.map',
     dest: './js'
   }
 }
