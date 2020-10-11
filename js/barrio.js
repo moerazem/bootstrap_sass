@@ -3,18 +3,19 @@
  * Global utilities.
  *
  */
-(function($, Drupal) {
+(function ($, Drupal) {
 
   'use strict';
 
-  Drupal.behaviors.bootstrap_barrio_subtheme = {
-    attach: function(context, settings) {
+  Drupal.behaviors.bootstrap_barrio = {
+    attach: function (context, settings) {
+
       var position = $(window).scrollTop();
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
+        $(window).scroll(function () {
+        if ($(this).scrollTop() > 50){
           $('body').addClass("scrolled");
         }
-        else {
+        else{
           $('body').removeClass("scrolled");
         }
         var scroll = $(window).scrollTop();
@@ -28,6 +29,12 @@
         position = scroll;
       });
 
+      $('.dropdown-item a.dropdown-toggle').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+      
     }
   };
 

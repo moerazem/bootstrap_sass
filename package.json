@@ -34,6 +34,9 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-postcss": "^8.0.0",
     "gulp-uglify": "^3.0.0",
-    "merge-stream": "^1.0.1"
+    "merge-stream": "^1.0.1",
+    "gulp-load-plugins": "^2.0.4",
+    "postcss-inline-svg": "^4.1.0",
+    "postcss-pxtorem": "^5.1.1"
   }
 }

@@ -3,7 +3,8 @@ global-styling:
   js: 
     js/popper.min.js: {}
     js/bootstrap.min.js: {}
-    js/global.js: {}
+    js/barrio.js: {}
+    js/custom.js: {}
   css:
     component:
       css/style.css: {}
